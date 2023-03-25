@@ -1,0 +1,55 @@
+.answerPostForm {
+  padding: .6rem;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+.answerPostForm label {
+  display: flex;
+  gap: .75rem;
+}
+
+.answerPostForm textarea {
+  flex: 1;
+  resize: none;
+  border: 0;
+  font-size: 1.25rem;
+  font-weight: 500;
+
+}
+.answerPostForm label textarea:focus {
+  outline: none;
+}
+.answerPostForm label textarea::placeholder {
+  color: #5b7083;
+}
+
+.btnAnswers{
+  margin-left: auto;
+  background: black;
+  border-radius: 9999px;
+  padding: .5rem 1rem;
+  color: black;
+  font-size: 1rem;
+  font-weight: 900;
+  border: 0;
+}
+.btnAnswers:hover {
+  filter: brightness(0.9);
+}
+
+
+/* @media (max-width: 768px) {
+  .answerPostForm label text{
+    font-size: 1rem;
+  }
+  .answerPostForm button[type=submit] {
+    padding: .75rem;
+  }
+  .answerPostForm button[type=submit] span {
+    display: none;
+  }
+  .answerPostForm button[type=submit] svg {
+    display: block;
+  }
+} */

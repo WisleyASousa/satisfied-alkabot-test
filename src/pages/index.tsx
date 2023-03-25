@@ -1,11 +1,12 @@
 import type { NextPage } from 'next'
-import styles from '../styles/Home.module.css'
 import MainLayout from '../layout/MainLayout'
+import styles from '../styles/Home.module.css'
 import { Separator } from '../components/Separator'
 import { FormEvent, KeyboardEvent, useState } from 'react'
-import perfil from '../../public/img/perfil.jpeg'
-import Image from 'next/image'
 import { Post } from '../components/Post'
+import Image from 'next/image'
+import perfil from '../../public/img/perfil.jpeg'
+import Navbar from '../components/Navbar'
 
 const Home: NextPage = () => {
   const [newPost, setNewPost] = useState('')
@@ -30,9 +31,15 @@ const Home: NextPage = () => {
 
   return (
     <MainLayout title="Satisfied">
-      <form onSubmit={handleNewPost} className={`${styles.newPostForm}`}>
+      <div className="col ">
+        <Navbar title={'Home'} />
+      </div>
+      <form
+        onSubmit={handleNewPost}
+        className={`${styles.newPostForm} border-bottom`}
+      >
         <label htmlFor="post" className="">
-          <div>
+          <div className="w-auto">
             <Image
               src={perfil}
               className="rounded-circle"
@@ -55,11 +62,11 @@ const Home: NextPage = () => {
         <button type="submit">Post</button>
       </form>
       <Separator />
-      <>
-        {posts.map((post, i) => (
-          <Post key={i} content={post} />
+      <div>
+        {posts.map((post) => (
+          <Post key={post} content={post} />
         ))}
-      </>
+      </div>
     </MainLayout>
   )
 }

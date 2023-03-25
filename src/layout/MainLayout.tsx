@@ -2,7 +2,6 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import MainLayoutProps from './MainLayoutProps'
 import Sidebar from '../components/SideBar'
-import Navbar from '../components/Navbar'
 
 export default function MainLayout(props: MainLayoutProps) {
   return (
@@ -24,15 +23,11 @@ export default function MainLayout(props: MainLayoutProps) {
       <div className={styles.page}>
         <div className="container text-center ">
           <div className="row">
-            <div className="col-2 p-0">
+            <div className="col-2 p-0 pt-2">
               <Sidebar />
             </div>
             <div className="col-10 p-0">
-              <div className="row">
-                <div className="col ">
-                  <Navbar />
-                </div>
-              </div>
+              <div className="row"></div>
               {props.children}
             </div>
           </div>

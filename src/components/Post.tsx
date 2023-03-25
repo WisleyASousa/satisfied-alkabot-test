@@ -9,9 +9,9 @@ interface PostProps {
 
 export function Post(props: PostProps): JSX.Element {
   return (
-    <Link href="/status" className={`${styles.post} text-black`}>
-      <div>
-        <div className="d-flex gap-2">
+    <Link href="/status" className={`${styles.post} text-black `}>
+      <div className={`${styles.containerPost} border-bottom `}>
+        <div className="d-flex gap-2 align-items-center p-2">
           <div className="w-auto">
             <Image
               src={perfil}
@@ -21,15 +21,15 @@ export function Post(props: PostProps): JSX.Element {
               alt="Wisley A. Sousa"
             />
           </div>
-          <div className={`${styles.postContent}`}>
-            <div className={`${styles.postContentHeader}`}>
+          <div className={`${styles.postContent} `}>
+            <div className={`${styles.postContentHeader} `}>
               <strong>Wisley A. Sousa</strong>
               <span>@wisleyasousa</span>
             </div>
           </div>
         </div>
         <div className="d-flex flex-column align-items-start p-2 gap-3">
-          <div className={`commentBox text-wrap text-start`}>
+          <div className={`text-wrap text-break text-start ps-2`}>
             <span>{props.content}</span>
           </div>
 

@@ -7,33 +7,30 @@
   text-decoration: none;
   box-sizing: border-box;
 }
+.containerPost {
+  cursor: pointer;
+}
 
 .post img {
   width: 3rem;
   height: 3rem;
   border-radius: 9999px;
 }
-.post .postContent {
+.postContent {
   display: flex;
   flex-direction: column;
   gap: .5rem; 
 }
-.post .postContent .postContentHeader {
+.postContentHeader {
   display: flex;
   flex-direction: column;
-  align-items: start;
+  align-items: flex-start;
 }
-.post .postContent .postContentHeader span {
-  font-size: .875rem;
-  
+.postContentHeader span {
+  font-size: .875rem; 
   color: #89a2b8;
 }
-.commentBox span {
-  display: block;
-  white-space: nowrap;
-  width: 100%;
-  word-wrap: break-word;
-}
+
 
 .postContentFooter {
   display: flex;
