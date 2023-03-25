@@ -2,13 +2,44 @@ import type { NextPage } from 'next'
 import MainLayout from '../layout/MainLayout'
 import styles from '../styles/Home.module.css'
 import { Separator } from '../components/Separator'
-import { FormEvent, KeyboardEvent, useState } from 'react'
+import { FormEvent, KeyboardEvent, useEffect, useState } from 'react'
 import { Post } from '../components/Post'
 import Image from 'next/image'
 import perfil from '../../public/img/perfil.jpeg'
 import Navbar from '../components/Navbar'
+import type { User, PostId } from '../../interfaces/index'
+import Loading from '../components/Loading'
 
 const Home: NextPage = () => {
+  const [users, setUsers] = useState<User[]>([])
+  const [postIds, setPostIds] = useState<PostId[]>([])
+  const [loading, setLoading] = useState<boolean>(false)
+
+  useEffect(() => {
+    setLoading(true)
+    const fetchData = async () => {
+      try {
+        const responsePosts = await fetch('http://localhost:3000/api/posts')
+        if (!responsePosts.ok) {
+          throw new Error('Erro ao obter os posts')
+        }
+        const dataPosts: PostId[] = await responsePosts.json()
+        setPostIds(dataPosts.map((post) => post))
+
+        const responseUsers = await fetch('http://localhost:3000/api/users')
+        if (!responseUsers.ok) {
+          throw new Error('Erro ao obter os users')
+        }
+        const dataUsers: User[] = await responseUsers.json()
+        setUsers(dataUsers.map((user) => user))
+      } catch (error) {
+        console.error(error)
+      }
+    }
+    fetchData()
+    setLoading(false)
+  }, [])
+
   const [newPost, setNewPost] = useState('')
   const [posts, setPosts] = useState([
     'Meu primeiro post',
@@ -31,7 +62,7 @@ const Home: NextPage = () => {
 
   return (
     <MainLayout title="Satisfied">
-      <div className="col ">
+      <div className="col">
         <Navbar title={'Home'} />
       </div>
       <form
@@ -59,13 +90,24 @@ const Home: NextPage = () => {
           />
         </label>
 
-        <button type="submit">Post</button>
+        <button type="submit" className="shadow-sm">
+          Post
+        </button>
       </form>
       <Separator />
       <div>
-        {posts.map((post) => (
-          <Post key={post} content={post} />
-        ))}
+        {loading ? (
+          <Loading />
+        ) : (
+          users.map((user, i) => (
+            <Post
+              key={user.id}
+              content={postIds[i].title}
+              user={user.name}
+              userName={user.username}
+            />
+          ))
+        )}
       </div>
     </MainLayout>
   )

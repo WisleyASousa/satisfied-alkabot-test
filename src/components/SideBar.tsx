@@ -6,18 +6,18 @@ import styles from '../styles/Sidebar.module.css'
 
 export default function Sidebar() {
   return (
-    <div>
-      <nav className="d-flex flex-column align-content-center justify-content-start gap-3 pt-2 border-end vh-100 ">
-        <div>
+    <div className="sticky-top">
+      <nav className="d-flex flex-column align-content-center justify-content-start gap-3 pt-2 border-end shadow-sm vh-100 ">
+        <div className="pt-2">
           <Image
             src={logo}
             alt="logo"
             width={44}
             height={44}
-            className=" rounded-circle "
+            className=" rounded-circle"
           />
         </div>
-        <ul className="list-group list-group-flush d-flex">
+        <ul className="list-group list-group-flush d-flex ">
           <Link href="./" className="list-group-item ">
             <i className="bi bi-house-door-fill fs-3 border-bottom py-3"></i>
           </Link>
@@ -37,8 +37,8 @@ export default function Sidebar() {
             <i className="bi bi-person-fill fs-3 border-bottom py-3"></i>
           </Link>
         </ul>
-        <button className={`${styles.newPost} mt-2`} type="button">
-          <i className={`${styles.svgBtn} text-white bi bi-pen-fill`}></i>
+        <button className={`${styles.newPost} mt-2 shadow-sm`} type="button">
+          <i className={`${styles.svgBtn} text-white bi bi-pen-fill`} />
           <span className={`${styles.spanBtn} text-white`}>Post</span>
         </button>
       </nav>

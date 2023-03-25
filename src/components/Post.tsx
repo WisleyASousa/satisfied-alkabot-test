@@ -4,7 +4,9 @@ import styles from '../styles/Post.module.css'
 import Link from 'next/link'
 
 interface PostProps {
-  content: string
+  content?: string
+  user?: string
+  userName?: string
 }
 
 export function Post(props: PostProps): JSX.Element {
@@ -15,7 +17,7 @@ export function Post(props: PostProps): JSX.Element {
           <div className="w-auto">
             <Image
               src={perfil}
-              className="rounded-circle"
+              className="rounded-circle "
               width={40}
               height={40}
               alt="Wisley A. Sousa"
@@ -23,8 +25,8 @@ export function Post(props: PostProps): JSX.Element {
           </div>
           <div className={`${styles.postContent} `}>
             <div className={`${styles.postContentHeader} `}>
-              <strong>Wisley A. Sousa</strong>
-              <span>@wisleyasousa</span>
+              <strong>{props.user}</strong>
+              <span>{`@${props.userName}`}</span>
             </div>
           </div>
         </div>
@@ -43,7 +45,7 @@ export function Post(props: PostProps): JSX.Element {
               25
             </button>
             <button type="button">
-              <i className="bi bi-balloon-heart-fill"></i>
+              <i className="bi bi-balloon-heart-fill "></i>
               25
             </button>
           </div>

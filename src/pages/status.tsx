@@ -31,7 +31,7 @@ const Status: NextPage = () => {
 
   return (
     <MainLayout title="Satisfied">
-      <div className="col">
+      <div className="col ">
         <Navbar title={'Post'} />
       </div>
       <Post
@@ -70,9 +70,9 @@ const Status: NextPage = () => {
       </form>
 
       <div className="border-bottom">
-        {answers.map((answer, i) => {
-          return <Post key={i} content={answer} />
-        })}
+        {answers.map((answer, i) => (
+          <Post key={i} content={answer} />
+        ))}
       </div>
     </MainLayout>
   )
