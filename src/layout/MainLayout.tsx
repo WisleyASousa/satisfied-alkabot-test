@@ -27,13 +27,13 @@ export default function MainLayout(props: MainLayoutProps) {
             <div className="col-2 p-0">
               <Sidebar />
             </div>
-            <div className="col-10">
+            <div className="col-10 p-0">
               <div className="row">
-                <div className="col border-bottom">
+                <div className="col ">
                   <Navbar />
                 </div>
               </div>
-              {props.children}2 of 2
+              {props.children}
             </div>
           </div>
         </div>

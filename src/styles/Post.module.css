@@ -1,0 +1,53 @@
+.post {
+  padding: 1.5rem 1.25rem;
+  display: flex;
+  flex: 1;
+  gap: .75rem;
+  border-bottom: 1px solid #ebeef0;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+.post img {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 9999px;
+}
+.post .postContent {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem; 
+}
+.post .postContent .postContentHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+.post .postContent .postContentHeader span {
+  font-size: .875rem;
+  
+  color: #89a2b8;
+}
+.commentBox span {
+  display: block;
+  white-space: nowrap;
+  width: 100%;
+  word-wrap: break-word;
+}
+
+.postContentFooter {
+  display: flex;
+  gap: 1rem;
+}
+.postContentFooter button {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  background: transparent;
+  border: 0;
+  font-size: .875rem;
+  color: #89a2b8;
+}
+.postContentFooter button:hover {
+  color: black;
+}

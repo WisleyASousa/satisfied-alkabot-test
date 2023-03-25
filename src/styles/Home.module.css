@@ -1,12 +1,44 @@
-.title {
-  font-size: 2rem;
+.newPostForm {
+  padding: 1.5rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+.newPostForm label {
+  display: flex;
+  gap: .75rem;
+}
+.newPostForm label img {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 9999px;
+}
+.newPostForm textarea {
+  flex: 1;
+  resize: none;
+  border: 0;
+  font-size: 1.25rem;
+  font-weight: 500;
+
+}
+.newPostForm label textarea:focus {
+  outline: none;
+}
+.newPostForm label textarea::placeholder {
+  color: #5b7083;
+  white-space: nowrap;
 }
 
-.title,
-.description {
-  text-align: center;
-}
-
-.description {
+.newPostForm button[type=submit] {
+  margin-left: auto;
+  background: black;
+  border-radius: 9999px;
+  padding: .5rem 1rem;
+  color: #fff;
   font-size: 1rem;
+  font-weight: 900;
+  border: 0;
+}
+.newPostForm button[type=submit]:hover {
+  filter: brightness(0.9);
 }
