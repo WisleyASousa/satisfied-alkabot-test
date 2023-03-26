@@ -1,12 +1,12 @@
 import { useState, FormEvent, KeyboardEvent } from 'react'
 import type { NextPage } from 'next'
-import MainLayout from '../layout/MainLayout'
-import styles from '../styles/Status.module.css'
-import { Separator } from '../components/Separator'
-import { Post } from '../components/Post'
+import MainLayout from '../../layout/MainLayout'
+import styles from '../../styles/Status.module.css'
+import { Separator } from '../../components/Separator'
+import { Post } from '../../components/Post'
 import Image from 'next/image'
-import perfil from '../../public/img/perfil.jpeg'
-import Navbar from '../components/Navbar'
+import perfil from '../../../public/img/perfil.jpeg'
+import Navbar from '../../components/Navbar'
 
 const Status: NextPage = () => {
   const [newAnswers, setNewAnswers] = useState('')

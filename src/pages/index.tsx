@@ -4,10 +4,10 @@ import styles from '../styles/Home.module.css'
 import { Separator } from '../components/Separator'
 import { useEffect, useState } from 'react'
 import { Post } from '../components/Post'
-
-import Navbar from '../components/Navbar'
 import type { User, PostId } from '../../interfaces/index'
+import Navbar from '../components/Navbar'
 import Loading from '../components/Loading'
+import UserRender from '../components/UserRender'
 
 const Home: NextPage = () => {
   const [users, setUsers] = useState<User[]>([])
@@ -59,37 +59,41 @@ const Home: NextPage = () => {
           <Loading />
         ) : (
           <>
-            <div>
-              <select
-                className={`${styles.btnSelect}  form-select shadow`}
-                value={selectedUserId || ''}
-                onChange={(e) =>
-                  setSelectedUserId(Number(e.target.value) || null)
-                }
-              >
-                <option className={`${styles.btnOption} `} value="">
-                  Todos os Usuários
-                </option>
-                {users.map((user) => (
-                  <option key={user.id} value={user.id}>
-                    {user.name}
+            <div className="d-flex flex-column justify-content-between pb-3">
+              <span className="fs-5 fw-bolder py-1">Selecione Usuário: </span>
+              <div className="">
+                <select
+                  className={`${styles.btnSelect} fw-semibold form-select shadow-sm`}
+                  value={selectedUserId || ''}
+                  onChange={(e) =>
+                    setSelectedUserId(Number(e.target.value) || null)
+                  }
+                >
+                  <option className={`${styles.btnOption} `} value="">
+                    Todos os Usuários
                   </option>
-                ))}
-              </select>
-              <Separator />
+                  {users.map((user) => (
+                    <option key={user.id} value={user.id}>
+                      {user.name}
+                    </option>
+                  ))}
+                </select>
+              </div>
+              {/* <Separator /> */}
             </div>
             {filteredPostIds.length > 0 ? (
               filteredPostIds.map((postId) => {
                 const user = users.find((user) => user.id === postId.userId)
                 if (user) {
                   return (
-                    <Post
-                      key={postId.id}
-                      title={postId.title}
-                      content={postId.body}
-                      user={user.name}
-                      userName={user.username}
-                    />
+                    <div className="" key={postId.id}>
+                      <UserRender user={user.name} userName={user.username} />
+                      <Post
+                        title={postId.title}
+                        content={postId.body}
+                        id={postId.id}
+                      />
+                    </div>
                   )
                 } else {
                   return null

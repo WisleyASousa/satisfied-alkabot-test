@@ -37,6 +37,3 @@
 .newPostForm button[type=submit]:hover {
   filter: brightness(0.9);
 }
-.btnSelect:hover{
-  font-weight: 700;
-}

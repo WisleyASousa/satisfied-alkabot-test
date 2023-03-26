@@ -16,11 +16,11 @@ export default function Sidebar() {
             alt="logo"
             width={44}
             height={44}
-            className=" rounded-circle"
+            className="rounded-circle"
           />
         </div>
         <ul className="list-group list-group-flush d-flex text-nowrap text-break ">
-          <Link href="./" className={`list-group-item `}>
+          <Link href="/" className={`list-group-item`}>
             <i
               className={` ${styles.btnLink} d-md-flex align-items-center ps-md-3 bi bi-house-door-fill fs-4 border-bottom py-3`}
             >

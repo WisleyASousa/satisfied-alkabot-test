@@ -2,7 +2,7 @@ import { NextApiRequest, NextApiResponse } from 'next'
 import { PostId } from '../../../interfaces/index'
 import posts from '../../../dataPosts.json'
 
-export default function getUsers(
+export default function getPosts(
   req: NextApiRequest,
   res: NextApiResponse<PostId[]>
 ) {
