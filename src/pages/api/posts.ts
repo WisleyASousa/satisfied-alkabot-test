@@ -1,11 +1,10 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 import { PostId } from '../../../interfaces/index'
+import posts from '../../../dataPosts.json'
 
-export default async function getPostId(
-  _: NextApiRequest,
-  res: NextApiResponse<PostId>
+export default function getUsers(
+  req: NextApiRequest,
+  res: NextApiResponse<PostId[]>
 ) {
-  const response = await fetch('https://jsonplaceholder.typicode.com/posts/')
-  const data = await response.json()
-  res.status(200).json(data)
+  res.status(200).json(posts)
 }

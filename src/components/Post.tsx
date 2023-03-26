@@ -5,6 +5,7 @@ import Link from 'next/link'
 
 interface PostProps {
   content?: string
+  title?: string
   user?: string
   userName?: string
 }
@@ -12,9 +13,9 @@ interface PostProps {
 export function Post(props: PostProps): JSX.Element {
   return (
     <Link href="/status" className={`${styles.post} text-black `}>
-      <div className={`${styles.containerPost} border-bottom `}>
-        <div className="d-flex gap-2 align-items-center p-2">
-          <div className="w-auto">
+      <div className={`${styles.containerPost} shadow-sm border-bottom `}>
+        <div className="d-flex gap-2  align-items-center p-2">
+          <div className="d-flex">
             <Image
               src={perfil}
               className="rounded-circle "
@@ -31,8 +32,12 @@ export function Post(props: PostProps): JSX.Element {
           </div>
         </div>
         <div className="d-flex flex-column align-items-start p-2 gap-3">
-          <div className={`text-wrap text-break text-start ps-2`}>
-            <span>{props.content}</span>
+          <div
+            className={`text-wrap text-break text-start ps-2 d-flex flex-column`}
+          >
+            <strong className="text-uppercase">{props.title}</strong>
+            <br />
+            <span className="">{props.content}</span>
           </div>
 
           <div className={`${styles.postContentFooter}`}>

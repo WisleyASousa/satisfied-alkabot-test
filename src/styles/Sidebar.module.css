@@ -11,17 +11,29 @@
   border: 0;
   font-weight: 900;
 }
+.spanBtnLink{
+  display: none;
+}
+.btnLink{
+  cursor: pointer;
+}
 .spanBtn{
   display: none;
 }
 
 @media (min-width: 768px)  {
+
+  .spanBtnLink{
+    display: inline-block;
+  }
   .svgBtn {
     display: none;
   }
+
   .spanBtn{
     display: block;
   }
+
   
 }
 

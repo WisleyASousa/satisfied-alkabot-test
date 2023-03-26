@@ -1,11 +1,10 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 import { User } from '../../../interfaces/index'
+import users from '../../../dataUsers.json'
 
-export default async function getUser(
-  _: NextApiRequest,
-  res: NextApiResponse<User>
+export default function getUsers(
+  req: NextApiRequest,
+  res: NextApiResponse<User[]>
 ) {
-  const response = await fetch('https://jsonplaceholder.typicode.com/users')
-  const data = await response.json()
-  res.status(200).json(data)
+  res.status(200).json(users)
 }

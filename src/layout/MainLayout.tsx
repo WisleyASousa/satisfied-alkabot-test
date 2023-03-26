@@ -23,10 +23,10 @@ export default function MainLayout(props: MainLayoutProps) {
       <div className={styles.page}>
         <div className="container text-center ">
           <div className="row">
-            <div className="col-2 p-0">
+            <div className="col-2 col-md-3 p-0">
               <Sidebar />
             </div>
-            <div className="col-10 p-0">
+            <div className="col-10 col-md-9 p-0">
               <div className="row"></div>
               {props.children}
             </div>
