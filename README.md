@@ -1,4 +1,5 @@
-<h1 align="center">Satisfied</h1>
+<div align="center"><img style="border-radius: 50%;" src="./public/logo-s.ico" width="100px;" alt=""/></div>
+<h1 align="center"> Satisfied</h1>
 <h2 align="center">Alkabot-Test</h2>
 <p align="center">Desenvolvendo um front-end para uma API RESTful. A interface deve exibir posts de um blog e, ao clicar em um post, os comentários associados. Interface criada do zero, usando dados aleatórios </p>
 <h1 align="center">
