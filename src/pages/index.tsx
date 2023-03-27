@@ -19,14 +19,14 @@ const Home: NextPage = () => {
     setLoading(true)
     const fetchData = async () => {
       try {
-        const responsePosts = await fetch('/api/posts')
+        const responsePosts = await fetch('http://localhost:3000/api/posts')
         if (!responsePosts.ok) {
           throw new Error('Erro ao obter os posts')
         }
         const dataPosts: PostId[] = await responsePosts.json()
         setPostIds(dataPosts.map((post) => post))
 
-        const responseUsers = await fetch('/api/users')
+        const responseUsers = await fetch('http://localhost:3000/api/users')
         if (!responseUsers.ok) {
           throw new Error('Erro ao obter os users')
         }
