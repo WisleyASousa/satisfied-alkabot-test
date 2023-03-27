@@ -8,7 +8,7 @@ import Image from 'next/image'
 import perfil from '../../../public/img/perfil.jpeg'
 import Navbar from '../../components/Navbar'
 import { useRouter } from 'next/router'
-import { PostId, User } from '../../../interfaces'
+import { PostId, User, Comments } from '../../../interfaces'
 import UserRender from '../../components/UserRender'
 
 const Status: NextPage = () => {
@@ -16,6 +16,7 @@ const Status: NextPage = () => {
   const { id } = router.query
   const [post, setPost] = useState<PostId | null>(null)
   const [user, setUser] = useState<User | null>(null)
+  const [comments, setComments] = useState<Comments[] | null>(null)
 
   useEffect(() => {
     const fetchData = async () => {
@@ -33,12 +34,22 @@ const Status: NextPage = () => {
         }
         const dataUser: User = await responseUser.json()
         setUser(dataUser)
+        
+        const responseComments = await fetch(`/api/posts/${id}/comments`)
+        if (!responseComments.ok) {
+          throw new Error('Erro ao obter os comentários')
+        }
+        const dataComments: Comments[] = await responseComments.json()
+        setComments(dataComments)
+
       } catch (error) {
         console.error(error)
       }
     }
     fetchData()
   }, [id])
+
+  
 
   const [newAnswers, setNewAnswers] = useState('')
   const [answers, setAnswers] = useState([
@@ -50,7 +61,7 @@ const Status: NextPage = () => {
   function handleNewAnswers(event: FormEvent) {
     event.preventDefault()
 
-    setAnswers([newAnswers, ...answers])
+    setAnswers([newAnswers, ...answers, ...comments.map(comment => comment.body)])
     setNewAnswers('')
   }
   function handleHotKeySubmit(event: KeyboardEvent<HTMLTextAreaElement>) {
@@ -59,8 +70,7 @@ const Status: NextPage = () => {
       setNewAnswers('')
     }
   }
-
-  console.log(user)
+  console.log(comments)
 
   return (
     <MainLayout title="Satisfied">

@@ -10,7 +10,7 @@ interface UserProps {
 }
 export default function UserRender(props: UserProps) {
   return (
-    <Link href="/">
+    <Link href="/profile">
       <div
         className={`${styles.BGContainerUser} rounded-4 shadow-sm mt-4 d-flex gap-2  align-items-center p-2`}
       >
@@ -27,7 +27,9 @@ export default function UserRender(props: UserProps) {
           <div className={`${styles.postContentHeader} `}>
             <strong>{props.user}</strong>
             <span>{`@${props.userName}`}</span>
+            
           </div>
+          
         </div>
       </div>
     </Link>

@@ -1,7 +1,6 @@
 import type { NextPage } from 'next'
 import MainLayout from '../layout/MainLayout'
 import styles from '../styles/Home.module.css'
-import { Separator } from '../components/Separator'
 import { useEffect, useState } from 'react'
 import { Post } from '../components/Post'
 import type { User, PostId } from '../../interfaces/index'
@@ -50,10 +49,9 @@ const Home: NextPage = () => {
 
   return (
     <MainLayout title="Satisfied">
-      <div className="col ms-sm-4">
+      <div className="col ms-sm-4 mb-2 shadow">
         <Navbar title={'Home'} />
       </div>
-      <Separator />
       <div className="ms-sm-4">
         {loading ? (
           <Loading />
@@ -92,6 +90,7 @@ const Home: NextPage = () => {
                         content={postId.body}
                         id={postId.id}
                       />
+                      
                     </div>
                   )
                 } else {

@@ -62,11 +62,11 @@ export default function Sidebar() {
               </span>
             </i>
           </Link>
-          <Link href="#" className="list-group-item">
+          <Link href="/profile" className="list-group-item">
             <i
               className={`bi bi-person-fill ${styles.btnLink} fs-4 d-md-flex align-items-center ps-md-3 border-bottom py-3`}
             >
-              <span className={`${styles.spanBtnLink} px-3 fs-5`}>Profile</span>
+              <span className={`${styles.spanBtnLink} px-3 fs-5`}>Profiles</span>
             </i>
           </Link>
         </ul>
