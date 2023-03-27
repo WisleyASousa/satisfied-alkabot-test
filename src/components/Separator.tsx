@@ -1,5 +1,5 @@
 import styles from '../styles/Separator.module.css'
 
 export function Separator() {
-  return <div className={`${styles.separator}`} />
+  return <div className={`${styles.separator} ms-sm-4`} />
 }

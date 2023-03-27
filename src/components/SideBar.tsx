@@ -6,9 +6,9 @@ import styles from '../styles/Sidebar.module.css'
 
 export default function Sidebar() {
   return (
-    <div className="sticky-top">
+    <div className={`${styles.BGSidebar} sticky-top`}>
       <nav
-        className={` d-flex flex-column align-content-center justify-content-start gap-3 pt-2 border-end shadow-sm vh-100 `}
+        className={` d-flex flex-column align-content-center justify-content-start gap-3 pt-2  shadow vh-100 `}
       >
         <div className="pt-2 d-sm-flex align-items-center justify-content-center fw-bold fst-italic gap-2">
           <Image
@@ -20,24 +20,24 @@ export default function Sidebar() {
           />
           <span className={`${styles.spanBtnLink} fs-5`}>Satisfied</span>
         </div>
-        <ul className="list-group list-group-flush d-flex text-nowrap text-break ">
-          <Link href="/" className={`list-group-item`}>
+        <ul className="list-group list-group-flush d-flex  text-nowrap text-break ">
+          <Link href="/" className={`list-group-item `}>
             <i
-              className={` ${styles.btnLink} d-md-flex align-items-center ps-md-3 bi bi-house-door-fill fs-4 border-bottom py-3`}
+              className={` ${styles.btnLink}  d-md-flex align-items-center ps-md-3 bi bi-house-door-fill fs-4 border-bottom py-3`}
             >
               <span className={`${styles.spanBtnLink} px-3 fs-5`}>Home</span>
             </i>
           </Link>
           <Link href="#" className="list-group-item">
             <i
-              className={`bi bi-hash fs-4 d-md-flex align-items-center ps-md-3 border-bottom py-3`}
+              className={`bi bi-hash ${styles.btnLink} fs-4 d-md-flex align-items-center ps-md-3 border-bottom py-3`}
             >
               <span className={`${styles.spanBtnLink} px-3 fs-5`}>Explore</span>
             </i>
           </Link>
           <Link href="#" className="list-group-item ">
             <i
-              className={`bi bi-bell-fill fs-4 d-md-flex align-items-center ps-md-3 border-bottom py-3`}
+              className={`bi bi-bell-fill ${styles.btnLink} fs-4 d-md-flex align-items-center ps-md-3 border-bottom py-3`}
             >
               <span className={`${styles.spanBtnLink} px-3 fs-5`}>
                 Notifications
@@ -46,7 +46,7 @@ export default function Sidebar() {
           </Link>
           <Link href="#" className="list-group-item">
             <i
-              className={`bi bi-envelope-fill fs-4 d-md-flex align-items-center ps-md-3 border-bottom py-3`}
+              className={`bi bi-envelope-fill ${styles.btnLink} fs-4 d-md-flex align-items-center ps-md-3 border-bottom py-3`}
             >
               <span className={`${styles.spanBtnLink} px-3 fs-5`}>
                 Messages
@@ -55,7 +55,7 @@ export default function Sidebar() {
           </Link>
           <Link href="#" className="list-group-item">
             <i
-              className={`bi bi-bookmark-fill fs-4 d-md-flex align-items-center ps-md-3 border-bottom py-3`}
+              className={`bi bi-bookmark-fill ${styles.btnLink} fs-4 d-md-flex align-items-center ps-md-3 border-bottom py-3`}
             >
               <span className={`${styles.spanBtnLink} px-3 fs-5`}>
                 Bookmarks
@@ -64,7 +64,7 @@ export default function Sidebar() {
           </Link>
           <Link href="#" className="list-group-item">
             <i
-              className={`bi bi-person-fill fs-4 d-md-flex align-items-center ps-md-3 border-bottom py-3`}
+              className={`bi bi-person-fill ${styles.btnLink} fs-4 d-md-flex align-items-center ps-md-3 border-bottom py-3`}
             >
               <span className={`${styles.spanBtnLink} px-3 fs-5`}>Profile</span>
             </i>

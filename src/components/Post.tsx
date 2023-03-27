@@ -22,7 +22,7 @@ export function Post(props: PostProps): JSX.Element {
     <animated.div style={propsAnim}>
       <Link href={`/status/${id}`} className={`${styles.post} text-black `}>
         <div className={`${styles.containerPost}  shadow-sm rounded-4`}>
-          <div className="d-flex flex-column align-items-start p-2 gap-3">
+          <div className={`d-flex flex-column align-items-start p-2 gap-3 `}>
             <div
               className={`text-wrap text-break text-start ps-2 d-flex flex-column`}
             >

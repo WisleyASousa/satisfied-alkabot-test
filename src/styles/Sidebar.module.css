@@ -11,15 +11,26 @@
   border: 0;
   font-weight: 900;
 }
+.newPost:hover {
+  box-shadow: 0px 0px 2px 1px rgb(0, 0, 0) !important;
+  transition: 0.2s;
+}
+
 .spanBtnLink{
   display: none;
 }
 .btnLink{
   cursor: pointer;
 }
+.btnLink:hover{
+  background-color: black !important;
+  color: white !important;
+  transition: 0.4s;
+}
 .spanBtn{
   display: none;
 }
+
 
 @media (min-width: 768px)  {
 

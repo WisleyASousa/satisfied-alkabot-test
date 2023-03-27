@@ -4,6 +4,7 @@
   flex-direction: column;
   gap: .5rem;
 }
+
 .answerPostForm label {
   display: flex;
   gap: .75rem;
@@ -19,6 +20,10 @@
 }
 .answerPostForm label textarea:focus {
   outline: none;
+  
+}
+.answerPostForm:focus-within {
+  border: 1px solid rgb(223, 211, 195, 0.6);
 }
 .answerPostForm label textarea::placeholder {
   color: #5b7083;
@@ -35,7 +40,8 @@
   border: 0;
 }
 .btnAnswers:hover {
-  filter: brightness(0.9);
+  box-shadow: 0px 0px 2px 1px rgb(0, 0, 0) !important;
+  transition: 0.2s;
 }
 
 

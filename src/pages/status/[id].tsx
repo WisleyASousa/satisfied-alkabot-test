@@ -1,4 +1,4 @@
-import { useState, FormEvent, KeyboardEvent } from 'react'
+import { useState, FormEvent, KeyboardEvent, useEffect } from 'react'
 import type { NextPage } from 'next'
 import MainLayout from '../../layout/MainLayout'
 import styles from '../../styles/Status.module.css'
@@ -7,8 +7,39 @@ import { Post } from '../../components/Post'
 import Image from 'next/image'
 import perfil from '../../../public/img/perfil.jpeg'
 import Navbar from '../../components/Navbar'
+import { useRouter } from 'next/router'
+import { PostId, User } from '../../../interfaces'
+import UserRender from '../../components/UserRender'
 
 const Status: NextPage = () => {
+  const router = useRouter()
+  const { id } = router.query
+  const [post, setPost] = useState<PostId | null>(null)
+  const [user, setUser] = useState<User | null>(null)
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const responsePost = await fetch(`/api/posts`)
+        if (!responsePost.ok) {
+          throw new Error('Erro ao obter o post')
+        }
+        const dataPost: PostId = await responsePost.json()
+        setPost(dataPost)
+
+        const responseUser = await fetch(`/api/users`)
+        if (!responseUser.ok) {
+          throw new Error('Erro ao obter o user')
+        }
+        const dataUser: User = await responseUser.json()
+        setUser(dataUser)
+      } catch (error) {
+        console.error(error)
+      }
+    }
+    fetchData()
+  }, [id])
+
   const [newAnswers, setNewAnswers] = useState('')
   const [answers, setAnswers] = useState([
     'Concordo...',
@@ -31,20 +62,25 @@ const Status: NextPage = () => {
 
   return (
     <MainLayout title="Satisfied">
-      <div className="col ">
+      <div className="col ms-sm-4">
         <Navbar title={'Post'} />
       </div>
-      <Post
-        content={
-          'Parabéns pelo progressoParabéns pelo progressoParabéns pelo progressoParabéns pelo progresso'
-        }
-      />
+      <div className="ms-sm-4 my-2">
+        <div className="">
+          {post && user && (
+            <>
+              <UserRender user={user.name} userName={user.username} />
+              <Post title={post.title} content={post.body} />
+            </>
+          )}
+        </div>
+      </div>
 
       <Separator />
 
       <form
         onSubmit={handleNewAnswers}
-        className={`${styles.answerPostForm} border-bottom shadow-sm`}
+        className={`${styles.answerPostForm} my-3 ms-sm-4 rounded-4 border-bottom shadow-sm`}
       >
         <label htmlFor="post">
           <div className="w-auto">
@@ -58,6 +94,7 @@ const Status: NextPage = () => {
           </div>
           <textarea
             id="post"
+            className={`${styles.textareaAnswers}`}
             placeholder="Post your answer"
             value={newAnswers}
             onKeyDown={handleHotKeySubmit}
@@ -71,7 +108,7 @@ const Status: NextPage = () => {
         </button>
       </form>
 
-      <div className="border-bottom">
+      <div className="ms-sm-4 d-flex flex-column gap-2">
         {answers.map((answer, i) => (
           <Post key={i} content={answer} />
         ))}
