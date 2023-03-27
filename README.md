@@ -7,7 +7,6 @@
 </h1>
 <p align="center">🚀 lib para construir interfaces do usuário com componentes reutilizáveis</p>
 
-[![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/Naereen/StrapDown.js/blob/master/LICENSE)
 ![Bootstrap](https://img.shields.io/badge/bootstrap-%23563D7C.svg?style=for-the-badge&logo=bootstrap&logoColor=white)
 ![Next JS](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
@@ -22,20 +21,13 @@
 
 =================
 
-<!--ts-->
-
-- [Sobre](#Sobre)
-- [Tabela de Conteudo](#tabela-de-conteudo)
-- [Instalação](#instalacao)
-- [Como usar](#como-usar)
-  - [Pre Requisitos](#pre-requisitos)
-  - [Local files](#local-files)
-  - [Remote files](#remote-files)
-  - [Multiple files](#multiple-files)
-  - [Combo](#combo)
-- [Tecnologias](#tecnologias)
-<!--te-->
-
+<p align="center">
+ <a href="#Features">Features</a> •
+ <a href="#Pré-requisitos">Pré-requisitos</a> • 
+ <a href="#tecnologias">Tecnologias</a> • 
+ <a href="#autor">Autor</a> • 
+ <a href="#licenc-a">Licença</a>
+</p>
 <h4 align="center"> 
 	🚧  Next.JS Select 🚀 Em construção...  🚧
 </h4>
@@ -99,3 +91,5 @@ Feito com ❤️ por Wisley A. Sousa 👋🏽 Entre em contato!
 [![Linkedin Badge](https://img.shields.io/badge/-WisleyA.Sousa-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/tgmarinho/)](https://www.linkedin.com/in/wisley-a-sousa-843060a2/)
 
 [![Email Badge](https://img.shields.io/badge/-wisleya.sousa@outlook.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:tgmarinho@gmail.com)](mailto:wisleya.sousa@outlook.com)
+
+[![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/Naereen/StrapDown.js/blob/master/LICENSE)
