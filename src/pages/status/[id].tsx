@@ -20,7 +20,7 @@ const Status: NextPage = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const responsePost = await fetch(`/api/posts`)
+        const responsePost = await fetch(`/api/post/${id}`)
         if (!responsePost.ok) {
           throw new Error('Erro ao obter o post')
         }
@@ -59,9 +59,9 @@ const Status: NextPage = () => {
       setNewAnswers('')
     }
   }
-  // console.log(post)
-  // console.log(user)
-  // console.log(id)
+
+  console.log(user)
+
   return (
     <MainLayout title="Satisfied">
       <div className="col ms-sm-4">

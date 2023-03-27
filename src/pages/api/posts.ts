@@ -8,3 +8,4 @@ export default function getPosts(
 ) {
   res.status(200).json(posts)
 }
+
