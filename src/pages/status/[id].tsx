@@ -20,14 +20,14 @@ const Status: NextPage = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const responsePost = await fetch(`http://localhost:3000/api/posts`)
+        const responsePost = await fetch(`/api/posts`)
         if (!responsePost.ok) {
           throw new Error('Erro ao obter o post')
         }
         const dataPost: PostId = await responsePost.json()
         setPost(dataPost)
 
-        const responseUser = await fetch(`http://localhost:3000/api/users`)
+        const responseUser = await fetch(`/api/users`)
         if (!responseUser.ok) {
           throw new Error('Erro ao obter o user')
         }
