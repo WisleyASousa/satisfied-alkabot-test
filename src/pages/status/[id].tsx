@@ -59,7 +59,9 @@ const Status: NextPage = () => {
       setNewAnswers('')
     }
   }
-
+  // console.log(post)
+  // console.log(user)
+  // console.log(id)
   return (
     <MainLayout title="Satisfied">
       <div className="col ms-sm-4">

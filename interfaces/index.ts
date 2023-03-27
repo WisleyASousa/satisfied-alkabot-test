@@ -10,3 +10,10 @@ export type PostId = {
   title: string
   body: string
 }
+
+export type Comments = {
+  postId: number
+  name: string
+  email: string
+  body: string
+}

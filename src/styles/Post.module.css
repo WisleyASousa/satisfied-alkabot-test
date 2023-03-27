@@ -9,7 +9,7 @@
   
 }
 .containerPost {
-  background-color: rgb(223, 211, 195, 0.1);
+  background-color: rgb(223, 211, 195, 0.4);
   cursor: pointer;
 }
 .containerPost:hover {

@@ -79,7 +79,6 @@ const Home: NextPage = () => {
                   ))}
                 </select>
               </div>
-              {/* <Separator /> */}
             </div>
             {filteredPostIds.length > 0 ? (
               filteredPostIds.map((postId) => {
