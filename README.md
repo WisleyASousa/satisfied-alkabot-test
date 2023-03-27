@@ -92,4 +92,4 @@ Feito com ❤️ por Wisley A. Sousa 👋🏽 Entre em contato!
 
 [![Email Badge](https://img.shields.io/badge/-wisleya.sousa@outlook.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:tgmarinho@gmail.com)](mailto:wisleya.sousa@outlook.com)
 
-[![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/Naereen/StrapDown.js/blob/master/LICENSE)
+[![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/WisleyASousa/satisfied-alkabot-test/blob/main/License)
