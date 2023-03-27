@@ -27,7 +27,7 @@ export default function MainLayout(props: MainLayoutProps) {
               <Sidebar />
             </div>
             <div className="col-10 col-md-9 p-0">
-              <div className="row"></div>
+              <div className="row "></div>
               {props.children}
             </div>
           </div>

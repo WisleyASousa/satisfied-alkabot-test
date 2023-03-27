@@ -10,7 +10,7 @@ export default function Sidebar() {
       <nav
         className={` d-flex flex-column align-content-center justify-content-start gap-3 pt-2 border-end shadow-sm vh-100 `}
       >
-        <div className="pt-2">
+        <div className="pt-2 d-sm-flex align-items-center justify-content-center fw-bold fst-italic gap-2">
           <Image
             src={logo}
             alt="logo"
@@ -18,6 +18,7 @@ export default function Sidebar() {
             height={44}
             className="rounded-circle"
           />
+          <span className={`${styles.spanBtnLink} fs-5`}>Satisfied</span>
         </div>
         <ul className="list-group list-group-flush d-flex text-nowrap text-break ">
           <Link href="/" className={`list-group-item`}>

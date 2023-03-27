@@ -31,7 +31,7 @@ const Status: NextPage = () => {
 
   return (
     <MainLayout title="Satisfied">
-      <div className="col ">
+      <div className="col">
         <Navbar title={'Post'} />
       </div>
       <Post
