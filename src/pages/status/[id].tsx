@@ -35,7 +35,7 @@ const Status: NextPage = () => {
         const dataUser: User = await responseUser.json()
         setUser(dataUser)
         
-        const responseComments = await fetch(`/api/posts/${id}/comments`)
+        const responseComments = await fetch(`/api/users/${id}/comments`)
         if (!responseComments.ok) {
           throw new Error('Erro ao obter os comentários')
         }
@@ -61,7 +61,7 @@ const Status: NextPage = () => {
   function handleNewAnswers(event: FormEvent) {
     event.preventDefault()
 
-    setAnswers([newAnswers, ...answers, ...comments.map(comment => comment.body)])
+    setAnswers([newAnswers, ...answers])
     setNewAnswers('')
   }
   function handleHotKeySubmit(event: KeyboardEvent<HTMLTextAreaElement>) {
