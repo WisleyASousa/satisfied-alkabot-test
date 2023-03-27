@@ -1,7 +1,16 @@
 <div align="center"><img style="border-radius: 50%;" src="./public/logo-s.ico" width="100px;" alt=""/></div>
 <h1 align="center"> Satisfied</h1>
+
+<div  align="center">
+
+### Os dados de usuários e postagens estão salvos na raiz do projeto com as seguintes nomenclaturas: dataUsers.json, dataPosts.json e dataComments.json
+- estava com dificuldade de fazer a requisição dos dados, então criei um arquivo json com os dados e fiz a requisição dos dados do arquivo json
+</div>
+<br />
+<br />
 <h2 align="center">Alkabot-Test</h2>
-<p align="center">Desenvolvendo um front-end para uma API RESTful. A interface deve exibir posts de um blog e, ao clicar em um post, os comentários associados. Interface criada do zero, usando dados aleatórios </p>
+<p align="center">Desenvolvendo um front-end para uma API RESTful. A interface deve exibir posts de um blog e, ao clicar em um post, os comentários associados. Interface criada do zero, usando dados aleatórios</p>
+<p align="center">Foi Criada uma pagina Web que simula um redes de postagens(blog), onde os usuários podem ver as postagens de outros usuários e perfis</p>
 <h1 align="center">
     <a href="https://nextjs.org/">🔗 Next.JS</a>
 </h1>
@@ -17,10 +26,6 @@
 ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
 ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
 
-    Tabela de conteúdos
-
-=================
-
 <p align="center">
  <a href="#Features">Features</a> •
  <a href="#Pré-requisitos">Pré-requisitos</a> • 
@@ -35,10 +40,10 @@
 ### Features
 
 - [x] Listar Usuários
+- [x] Listar Usuários na pagina Profile
 - [x] Listar Posts
-- [x] Listar comentários do post
-- [ ] Redirecionar para página de detalhes do post
-- [ ] Redirecionar para página de detalhes do Usurário
+- [x] Adicionando Comentários ao um Post Clicado
+- [ ] Listar comentários do post
 
 #
 
